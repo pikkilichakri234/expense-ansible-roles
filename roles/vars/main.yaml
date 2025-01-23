@@ -1,5 +1,0 @@
-MYSQL_HOST: mysql.omnamahashivaya.online
-MYSQL_USER: root
-mysql_root_password: ExpenseApp@1
-APP_LOCAION: /app
-COMPONENT: backend

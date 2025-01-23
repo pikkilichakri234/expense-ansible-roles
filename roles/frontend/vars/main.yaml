@@ -1,3 +1,0 @@
-BACKEND_HOST: "backend.omnamahashivaya.online"
-APP_LOCATION: /usr/share/nginx/html
-COMPONENT: frontend
