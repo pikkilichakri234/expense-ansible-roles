@@ -40,8 +40,6 @@
 #     remote_src: yes
 
 - name: Install dependencies
-  tags: 
-  - deployment
   community.general.npm:
     path: /app
 
@@ -68,8 +66,6 @@
     target: /app/schema/backend.sql
 
 - name: daemon reload and restart service
-  tags: 
-  - deployment
   ansible.builtin.systemd_service:
     enabled: true
     state: restarted
