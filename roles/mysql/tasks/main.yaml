@@ -17,14 +17,14 @@
     state: started
     enabled: yes
 
-- name: connect to mysql server
+- name: Connect to MySQL server
   community.mysql.mysql_info:
     login_user: root
     login_password: "{{ lookup('amazon.aws.ssm', '/expense/omnamahashivaya/mysql_root_password', 'decrypt=False') }}"
     login_host: "{{ mysql_host }}"
   register: mysql_info
-  ignore_errors: true
-
+  ignore_errors: yes
+  
 - name: print the output
   ansible.builtin.debug:
     msg: "MySQL info: {{ mysql_info }}"
