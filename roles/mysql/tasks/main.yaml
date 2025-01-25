@@ -29,8 +29,6 @@
   ansible.builtin.debug:
     msg: "MySQL info: {{ mysql_info }}"
 
-- name: Setup root password
-  ansible.builtin.command: >
-    mysql_secure_installation --set-root-pass
-    {{ lookup('amazon.aws.ssm', '/realproject/om/mysql-password', 'decrypt=False') }}
-  when: mysql_info.failed | bool
+- name: setup root password
+  ansible.builtin.command: " mysql_secure_installation --set-root-pass {{ lookup('amazon.aws.aws_ssm', /realproject/om/mysql-password', decrypt=True ) }} "
+  when: mysql_info.failed is true
